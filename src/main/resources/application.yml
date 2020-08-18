@@ -2,11 +2,6 @@ graphql:
   packages:
     - "com.undefined.platz"
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:13306/platz?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC&allowPublicKeyRetrieval=true&useSSL=false
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: platz
-    password: ${DB_PASSWORD}
 
   jpa:
     show-sql: true

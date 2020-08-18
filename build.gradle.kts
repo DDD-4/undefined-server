@@ -17,12 +17,23 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    set("springCloudVersion", "Hoxton.SR6")
+}
+
+dependencyManagement {
+    imports {
+        mavenBom("org.springframework.cloud:spring-cloud-dependencies:Greenwich.SR3")
+    }
+}
+
 dependencies {
     implementation("com.expediagroup", "graphql-kotlin-spring-server", "3.6.0")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    implementation("org.springframework.cloud:spring-cloud-starter-aws-parameter-store-config")
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     runtimeOnly("mysql:mysql-connector-java")
     testImplementation("org.springframework.boot:spring-boot-starter-test") {

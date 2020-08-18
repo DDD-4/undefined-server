@@ -1,0 +1,20 @@
+{
+  "containerDefinitions": [
+    {
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "protocol": "tcp",
+          "containerPort": 8080
+        }
+      ],
+      "memory": 300,
+      "image": "010873464532.dkr.ecr.ap-northeast-2.amazonaws.com/repo-platz",
+      "name": "platz-container"
+    }
+  ],
+  "family": "platz-task",
+  "requiresCompatibilities": [
+    "EC2"
+  ]
+}

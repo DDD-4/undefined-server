@@ -1,0 +1,23 @@
+version: '3'
+
+networks:
+  platz-network:
+
+services:
+  mysql:
+    image: mysql:latest
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    container_name: platz-mysql
+    networks:
+      - platz-network
+    ports:
+      - 13306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=platz
+      - MYSQL_USER=platz
+      - MYSQL_PASSWORD=platz
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      - ./mysql/init:/docker-entrypoint-initdb.d/init.sql
+      - ./mysql/tools:/tools

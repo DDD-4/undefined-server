@@ -2,9 +2,20 @@ graphql:
   packages:
     - "com.undefined.platz"
 spring:
-
   jpa:
     show-sql: true
     generate-ddl: true
     database: mysql
     database-platform: org.hibernate.dialect.MySQL8Dialect
+---
+spring:
+  profiles: default,local
+---
+spring:
+  profiles: dev
+---
+spring:
+  profiles: prod
+---
+spring:
+  profiles: test

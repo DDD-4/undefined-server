@@ -1,4 +1,4 @@
-package com.undefined.platz.domain
+package com.undefined.platz.entity
 
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
@@ -18,6 +18,6 @@ abstract class BaseEntity(
 
         @LastModifiedDate
         var modifiedDate: LocalDateTime? = null,
-        
+
         var deletedDate: LocalDateTime? = null
 )

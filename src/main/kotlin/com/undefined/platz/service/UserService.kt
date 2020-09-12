@@ -1,6 +1,6 @@
 package com.undefined.platz.service
 
-import com.undefined.platz.domain.User
+import com.undefined.platz.entity.User
 import com.undefined.platz.repository.UserRepository
 import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
@@ -9,15 +9,18 @@ import org.springframework.stereotype.Service
 class UserService(
         private val userRepository: UserRepository
 ) {
-    fun findOne(userId: Long): User? {
-        return userRepository.findByIdOrNull(userId)
+    fun findOne(id: Long): User? {
+        return userRepository.findByIdOrNull(id)
     }
 
     fun findAll(): List<User> {
         return userRepository.findAll()
     }
 
-    fun join(user: User): Long {
-        return userRepository.save(user).id!!
+    fun create(email: String, nickname: String, profilePicture: String): User {
+        return userRepository.save(User(
+                email,
+                nickname,
+                profilePicture))
     }
 }

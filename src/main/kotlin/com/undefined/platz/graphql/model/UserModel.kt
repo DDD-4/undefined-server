@@ -3,7 +3,7 @@ package com.undefined.platz.graphql.model
 import com.expediagroup.graphql.scalars.ID
 import com.undefined.platz.entity.User
 
-data class User(
+data class UserModel(
         var id: ID?,
         var email: String,
         val profilePicture: String?,

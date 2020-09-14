@@ -20,7 +20,8 @@ class UserService(
     fun create(email: String, nickname: String, profilePicture: String): User {
         return userRepository.save(User(
                 email,
-                nickname,
-                profilePicture))
+                profilePicture,
+                nickname)
+        )
     }
 }

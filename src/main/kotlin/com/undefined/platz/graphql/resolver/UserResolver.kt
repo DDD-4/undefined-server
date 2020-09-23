@@ -8,7 +8,7 @@ import com.undefined.platz.service.UserService
 import org.springframework.stereotype.Component
 
 @Component
-class UserQuery(
+class UserQueryResolver(
         private val userService: UserService
 ) : Query {
     fun user(id: ID): User? {
@@ -28,7 +28,7 @@ data class CreateUserInput(
 )
 
 @Component
-class UserMutation(
+class UserMutationResolver(
         private val userService: UserService
 ) : Mutation {
     fun createUser(input: CreateUserInput): User {

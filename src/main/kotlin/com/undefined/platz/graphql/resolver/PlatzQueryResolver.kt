@@ -7,7 +7,7 @@ import com.undefined.platz.service.PlatzService
 import org.springframework.stereotype.Component
 
 @Component
-class PlatzQuery(
+class PlatzQueryResolver(
         private val PlatzService: PlatzService
 ) : Query {
     fun platz(id: ID): Platz? {

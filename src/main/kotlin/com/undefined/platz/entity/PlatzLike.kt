@@ -1,10 +1,9 @@
 package com.undefined.platz.entity
 
-import javax.persistence.Entity
-import javax.persistence.JoinColumn
-import javax.persistence.ManyToOne
+import javax.persistence.*
 
 @Entity
+@Table(uniqueConstraints = [UniqueConstraint(columnNames = ["user_id", "platz_id"])])
 data class PlatzLike(
         @ManyToOne
         @JoinColumn(name = "user_id")

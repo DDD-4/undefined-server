@@ -4,7 +4,7 @@ import javax.persistence.Entity
 
 @Entity
 data class User(
-        val email: String,
-        val profilePicture: String?,
-        val nickname: String
+        var email: String,
+        var profilePicture: String?,
+        var nickname: String
 ) : BaseEntity()
